@@ -67,19 +67,19 @@ extension GetItInjectableX on _i174.GetIt {
             apiClient: gh<_i757.ApiClient>()));
     gh.singleton<_i10.FavoritesRepository>(() => _i887.FavoritesRepositoryImpl(
         favoritesLocalDataSource: gh<_i490.FavoritesLocalDataSource>()));
+    gh.lazySingleton<_i956.RemoveFavoriteUseCase>(() =>
+        _i956.RemoveFavoriteUseCase(
+            favoritesRepository: gh<_i10.FavoritesRepository>()));
     gh.lazySingleton<_i810.AddFavoriteUseCase>(() => _i810.AddFavoriteUseCase(
         favoritesRepository: gh<_i10.FavoritesRepository>()));
+    gh.lazySingleton<_i956.WatchFavoritesUseCase>(() =>
+        _i956.WatchFavoritesUseCase(
+            favoritesRepository: gh<_i10.FavoritesRepository>()));
     gh.lazySingleton<_i847.CheckFavoriteUseCase>(() =>
         _i847.CheckFavoriteUseCase(
             favoritesRepository: gh<_i10.FavoritesRepository>()));
     gh.lazySingleton<_i992.GetFavoritesUseCase>(() => _i992.GetFavoritesUseCase(
         favoritesRepository: gh<_i10.FavoritesRepository>()));
-    gh.lazySingleton<_i956.RemoveFavoriteUseCase>(() =>
-        _i956.RemoveFavoriteUseCase(
-            favoritesRepository: gh<_i10.FavoritesRepository>()));
-    gh.lazySingleton<_i956.WatchFavoritesUseCase>(() =>
-        _i956.WatchFavoritesUseCase(
-            favoritesRepository: gh<_i10.FavoritesRepository>()));
     gh.singleton<_i874.HotelsRepository>(() => _i83.HotelsRepositoryImpl(
         hotelsRemoteDataSource: gh<_i239.HotelsRemoteDataSource>()));
     gh.lazySingleton<_i568.FetchHotelsUseCase>(() => _i568.FetchHotelsUseCase(

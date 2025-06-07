@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/core/integration_test_keys.dart';
 
 import 'package:hotel_booking/i18n/strings.g.dart';
 
@@ -28,11 +29,16 @@ class SearchTextField extends StatelessWidget {
         ),
         prefixIcon: SizedBox(
           width: 48,
-          child: Icon(Icons.search),
+          child: Icon(
+            key:HotelsPageKeys.searchIcon,
+            Icons.search
+            ),
         ),
         suffixIcon: IconButton(
           onPressed: controller.clear,
-          icon: Icon(Icons.cancel_outlined),
+          icon: Icon(
+            key: HotelsPageKeys.clearSearchIcon,
+            Icons.cancel_outlined),
         ),
         filled: true,
         contentPadding: EdgeInsets.symmetric(vertical: 12),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotel_booking/core/integration_test_keys.dart';
 
 import 'package:hotel_booking/features/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:hotel_booking/features/hotels/presentation/bloc/hotels_bloc.dart';
@@ -68,6 +69,7 @@ class _HotelsPageState extends State<HotelsPage> {
       appBar: AppBar(
         toolbarHeight: 80,
         title: SearchTextField(
+          key:HotelsPageKeys.hotelsSearchTextField,
           controller: _searchController,
           focusNode: _searchFocusNode,
         ),
