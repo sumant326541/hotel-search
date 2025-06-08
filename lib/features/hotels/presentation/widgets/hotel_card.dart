@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_booking/core/integration_test_keys.dart';
 import 'package:hotel_booking/features/hotels/domain/entities/entities.dart';
 
 class HotelCard extends StatelessWidget {
@@ -47,8 +48,13 @@ class HotelCard extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.favorite_outline),
-              selectedIcon: Icon(Icons.favorite),
+              key: HotelsPageKeys.hotelCardFavoriteButton,
+              icon: Icon(
+                  key: HotelsPageKeys.hotelCardFavoriteIcon,
+                  Icons.favorite_outline),
+              selectedIcon: Icon(
+                  key: HotelsPageKeys.hotelCardFavoriteSelectedIcon,
+                  Icons.favorite),
               isSelected: isFavorite,
               onPressed: () => onFavoriteChanged(!isFavorite),
             ),

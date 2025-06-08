@@ -1,5 +1,4 @@
-package com.example.hotel_booking; // replace "com.example.myapp" with your app's package
-
+package com.example.hotel_booking;
 import androidx.test.platform.app.InstrumentationRegistry;
 import org.junit.Test;
 import org.junit.runner.RunWith;

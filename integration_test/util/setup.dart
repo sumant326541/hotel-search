@@ -20,7 +20,7 @@ Future<App> buildApp() async {
   EquatableConfig.stringify = true;
   Bloc.observer = SimpleBlocObserver();
   Hive.defaultDirectory = (await getApplicationDocumentsDirectory()).path;
-  LocaleSettings.useDeviceLocale();
+  LocaleSettings.useDeviceLocale(); // or LocaleSettings.setLocale(AppLocale.en); // or .de, .fr, etc. for specific locale 
   configureDependencies();
 
   return App();

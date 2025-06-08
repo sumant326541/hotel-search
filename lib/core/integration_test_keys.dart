@@ -15,6 +15,9 @@ class HotelsPageKeys {
   static const searchIcon = Key('searchIcon');
   static const clearSearchIcon = Key('clearSearchIcon');
   static const hotelsSearchTextField = Key('hotelsSearchTextField');
+  static const hotelCardFavoriteButton = Key('hotelCardFavoriteButton');
+  static const hotelCardFavoriteIcon = Key('hotelCardFavoriteIcon');
+  static const hotelCardFavoriteSelectedIcon = Key('hotelCardFavoriteSelectedIcon');
 }
 
 class FavoritesPageKeys {
