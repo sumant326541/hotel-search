@@ -32,7 +32,14 @@ Ensure initial setup has been complemented mentioned in README.md and an emulato
 
 ## ✅ Running Automation Tests Locally
 
-Ensure initial setup has been complemented mentioned in README.md
+### Clone the project repository and switch to the dev branch to fetch the latest Patrol tests.
+```bash
+git clone https://github.com/sumant326541/hotel-search.git
+git checkout -b dev origin/dev
+```
+
+
+Ensure initial setup has been completed mentioned in README.md
 
 ### 1. Unit & Widget Tests
 Added a sample widget test `test/features/account/presentation/pages/account_page_test.dart`
