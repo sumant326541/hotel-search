@@ -35,6 +35,7 @@ Ensure initial setup has been complemented mentioned in README.md and an emulato
 Ensure initial setup has been complemented mentioned in README.md
 
 ### 1. Unit & Widget Tests
+Added a sample widget test `test/features/account/presentation/pages/account_page_test.dart`
 ```bash
 make flutter-test
 # or manually
@@ -42,7 +43,7 @@ flutter test --coverage --test-randomize-ordering-seed random
 ```
 ## 2. Integration tests
 
-The integration test suite can be found at `integration_test/`. The tests are ran by [Patrol](#running-patrol-tests).
+The integration test suite can be found at `integration_test/` for e2e testing. The tests are ran by [Patrol](#running-patrol-tests).
 
 ### Running Patrol Tests
 Firstly, [install](https://patrol.leancode.co/getting-started#install-patrol_cli) Patrol CLI.
@@ -50,6 +51,13 @@ Firstly, [install](https://patrol.leancode.co/getting-started#install-patrol_cli
 Then make sure you have an Android emulator / iOS simulator set up and running, guide 
 [Android-emulator-setup](https://developer.android.com/studio/run/emulator#get-started), 
 [iOS-simulator-setup](https://developer.apple.com/documentation/xcode/running-your-app-in-simulator-or-on-a-device)
+
+### Install patrol_cli:
+```bash
+make patrol-activate
+```
+### Run Test
+
 ```bash
 make patrol-test
 # or manually
@@ -90,7 +98,16 @@ make test-all
 ### Detailed documentation can be found [here](https://patrol.leancode.co/cli-commands/test) or by executing `patrol test -help`.
 ---
 
-## Tips for Maintaining Test Suite
+### 8. Logs and Reporting
+
+- [`Logs and test results`](https://patrol.leancode.co/logs) —  follow this link to check logs and test results.
+
+### 9. Screenshots
+
+- [`open issue`](https://github.com/leancodepl/patrol/issues/534) —  There is an open issue regarding the automatic capture of default screenshots on test failures in Patrol.
+- We can wrap the test in a try/catch block and use Flutter’s screenshot method to capture a screenshot when a test fails.
+
+### 10. Tips for Maintaining Test Suite
 
 - Structure tests by feature or domain (e.g., `test/auth/`, `integration_test/hotel_test.dart`).
 - Use tags or filters (`--tags`) if the test suite becomes large.

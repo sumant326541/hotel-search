@@ -70,15 +70,23 @@ jobs:
             echo "Running Patrol integration tests on ${{ matrix.device }}"
             make patrol-test
 
-      - name: Upload test results (optional)
+      - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: patrol-test-results
           path: build/
 
-      # Optional: Notify Slack/Teams
-      # - name: Notify team
-      #   uses: some-notification-action
+      - name: Send test report to Slack
+        if: always()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: slack-channel-id
+        run: |
+          curl -F file=@build/report.html \
+               -F channels=$SLACK_CHANNEL \
+               -F initial_comment="Here is the latest test report." \
+               -H "Authorization: Bearer $SLACK_TOKEN" \
+               https://slack.com/api/files.upload
 ```
 

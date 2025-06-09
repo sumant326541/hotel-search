@@ -25,6 +25,11 @@ test:
 flutter-test:
 	flutter test --coverage --test-randomize-ordering-seed random
 
+# Activate patrol CLI tool
+.PHONY: patrol-activate
+patrol-activate:
+	flutter pub global activate patrol_cli
+
 # Run integration tests with Patrol
 .PHONY: patrol-test
 patrol-test:
